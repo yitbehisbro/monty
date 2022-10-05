@@ -51,4 +51,10 @@ char **strtok_opcode(char *str);
 /*************free_stack.c***************/
 void free_stack(stack_t **stack);
 
+/************pop_pint_swap_add.c*********/
+void _pop(stack_t **stack, unsigned int number);
+void _pint(stack_t **stack, unsigned int number);
+void _swap(stack_t **stack, unsigned int count_line);
+void _add(stack_t **stack, unsigned int count_line);
+
 #endif
