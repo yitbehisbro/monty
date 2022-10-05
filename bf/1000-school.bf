@@ -1,4 +1,4 @@
-BrainF*ck script that prints 'School' that followed by a new line.
+BrainF*ck script that prints 'School' that followed by a new line
 
 >
 +++++ +++++
