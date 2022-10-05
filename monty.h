@@ -68,4 +68,8 @@ void _mod(stack_t **stack, unsigned int count_line);
 void _pchar(stack_t **stack, unsigned int count_line);
 void _pstr(stack_t **stack, unsigned int count_line);
 
+/*************rotl_and_rotr.c*********************/
+void _rotl(stack_t **stack, unsigned int count_line);
+void _rotr(stack_t **stack, unsigned int count_line);
+
 #endif
