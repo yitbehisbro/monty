@@ -6,6 +6,7 @@
 #include <stdio.h>
 #include <string.h>
 
+extern unsigned int count_line;
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
  * @n: integer
