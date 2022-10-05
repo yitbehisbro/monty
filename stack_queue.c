@@ -32,22 +32,17 @@ void _stack(stack_t **list, unsigned int count)
  */
 void _queue(stack_t **head, unsigned int count)
 {
-	stack_t *prev, *next;
+	stack_t *temp = NULL;
+	stack_t *current = *head;
 	(void) count;
 
-	if (head == NULL || *head == NULL)
-		return;
-
-	if ((*head)->next == NULL)
-		return;
-
-	prev = NULL;
-	while (*head != NULL)
+	while (current !=  NULL)
 	{
-		next = (*head)->next;
-		(*head)->next = prev;
-		prev = *head;
-		*head = next;
+		temp = current->prev;
+		current->prev = current->next;
+		current->next = temp;
+		current = current->prev;
 	}
-	*head = prev;
+	if (temp != NULL)
+		*head = temp->prev;
 }
