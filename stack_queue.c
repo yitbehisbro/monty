@@ -45,7 +45,7 @@ void _queue(stack_t **head, unsigned int count)
  * Return: no return
  *
  */
-void reverse(stack_t **head)
+stack_t *reverse(stack_t **head)
 {
 	stack_t *temp = NULL;
 	stack_t *current = *head;
@@ -59,4 +59,5 @@ void reverse(stack_t **head)
 	}
 	if (temp != NULL)
 		*head = temp->prev;
+	return (*head);
 }
