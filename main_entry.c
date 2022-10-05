@@ -43,7 +43,7 @@ int main(int argc, char *argv[])
 		}
 	}
 	free(buffer);
-	free_stack(&head);
+	clean_stack(&head);
 	fclose(fp);
 
 	return (0);
