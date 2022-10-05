@@ -7,7 +7,7 @@
  *
  * Return: no return
  */
-stack_t _stack(stack_t **list, unsigned int count)
+void _stack(stack_t **list, unsigned int count)
 {
 	stack_t *node, *head;
 	(void) count;
