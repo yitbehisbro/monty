@@ -18,7 +18,6 @@ void _stack(stack_t **list, unsigned int count)
 
 	while (node)
 	{
-		fprintf(stdout, "%d\n", node->n);
 		node = node->next;
 	}
 }
