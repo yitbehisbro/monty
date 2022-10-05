@@ -24,7 +24,7 @@ void call(char **opcode_tokens, stack_t **stack)
 		if (strcmp(opcode_tokens[0], ops[i].opcode) == 0)
 		{
 			if (ops[i].f)
-				ops[i].f(stack, line_number);
+				ops[i].f(stack, count_line);
 			break;
 		}
 		i++;
@@ -57,7 +57,7 @@ void is_token(char **opcode_tokens, stack_t **stack)
 
 	if (!opcode_tokens[1])
 	{
-		fprintf(stderr, "L%u: usage: push integer\n", line_number);
+		fprintf(stderr, "L%u: usage: push integer\n", count_line);
 		if (*stack)
 			free_stack(stack);
 		free(opcode_tokens);
@@ -70,7 +70,7 @@ void is_token(char **opcode_tokens, stack_t **stack)
 			i++;
 		if (isdigit(opcode_tokens[1][i]) == 0)
 		{
-			fprintf(stderr, "L%u: usage: push integer\n", line_number);
+			fprintf(stderr, "L%u: usage: push integer\n", count_line);
 			if (*stack)
 				free_stack(stack);
 			free(opcode_tokens);
