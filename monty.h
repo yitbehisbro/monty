@@ -42,4 +42,7 @@ void is_token(char **opcode_tokens, stack_t **stack);
 /**************strtok.c********************/
 char **strtok_opcode(char *str);
 
+/*************free_stack.c***************/
+void free_stack(stack_t **stack);
+
 #endif
