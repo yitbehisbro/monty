@@ -4,7 +4,8 @@ static instruction_t ops[] = {
 	{"push", _push}, {"pall", _pall}, {"pint", _pint}, {"pop", _pop},
 	{"swap", _swap}, {"add", _add}, {"nop", NULL}, {"sub", _sub}, {"div", _div},
 	{"mul", _mul}, {"mod", _mod}, {"pchar", _pchar}, {"pstr", _pstr},
-	{"rotl", _rotl}, {"rotr", _rotr}, {"stack", _stack}, {NULL, NULL}
+	{"rotl", _rotl}, {"rotr", _rotr}, {"stack", _stack}, {"stack", _queue},
+	{NULL, NULL}
 };
 
 /**
