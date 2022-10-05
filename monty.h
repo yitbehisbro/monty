@@ -64,4 +64,8 @@ void _div(stack_t **stack, unsigned int count_line);
 void _mul(stack_t **stack, unsigned int count_line);
 void _mod(stack_t **stack, unsigned int count_line);
 
+/**************pchar_pstr.c**************************/
+void _pchar(stack_t **stack, unsigned int count_line);
+void _pstr(stack_t **stack, unsigned int count_line);
+
 #endif
