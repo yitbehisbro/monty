@@ -4,6 +4,11 @@
 static instruction_t ops[] = {
 	{"push", _push},
 	{"pall", _pall},
+	{"pint", _pint},
+	{"pop", _pop},
+	{"swap", _swap},
+	{"add", _add},
+	{"nop", NULL},
 	{NULL, NULL}
 };
 
