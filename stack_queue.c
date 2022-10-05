@@ -32,13 +32,13 @@ void _stack(stack_t **list, unsigned int count)
  */
 void _queue(stack_t **head, unsigned int count)
 {
-	listint_t *prev, *next;
+	stack_t *prev, *next;
 
 	if (head == NULL || *head == NULL)
-		return (NULL);
+		return;
 
 	if ((*head)->next == NULL)
-		return (*head);
+		return;
 
 	prev = NULL;
 	while (*head != NULL)
