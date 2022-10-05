@@ -32,6 +32,19 @@ void _stack(stack_t **list, unsigned int count)
  */
 void _queue(stack_t **head, unsigned int count)
 {
+	reverse(&head);
+}
+
+/**
+ * reverse - reverses the stacks
+ * @head_ref: pointer to struct
+ * @count: number of line number
+ *
+ * Return: no return
+ *
+ */
+void reverse(stack_t **head_ref)
+{
 	stack_t *temp = NULL;
 	stack_t *current = *head;
 	(void) count;
