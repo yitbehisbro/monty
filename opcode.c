@@ -1,4 +1,5 @@
 #include "monty.h"
+#include <ctype.h>
 
 static instruction_t ops[] = {
 	{"push", _push},
@@ -38,7 +39,7 @@ void call(char **opcode_tokens, stack_t **stack)
 	else if (!(ops[i].opcode))
 	{
 		fprintf(stderr, "L%u: unknown instruction %s\n",
-			line_number,
+			count_line,
 			opcode_tokens[0]);
 		exit(EXIT_FAILURE);
 	}
