@@ -33,6 +33,7 @@ void _stack(stack_t **list, unsigned int count)
 void _queue(stack_t **head, unsigned int count)
 {
 	stack_t *prev, *next;
+	(void) count;
 
 	if (head == NULL || *head == NULL)
 		return;
