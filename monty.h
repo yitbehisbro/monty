@@ -58,4 +58,10 @@ void _pint(stack_t **stack, unsigned int number);
 void _swap(stack_t **stack, unsigned int count_line);
 void _add(stack_t **stack, unsigned int count_line);
 
+/**************sub_div_mul_mod.c*********/
+void _sub(stack_t **stack, unsigned int count_line);
+void _div(stack_t **stack, unsigned int count_line);
+void _mul(stack_t **stack, unsigned int count_line);
+void _mod(stack_t **stack, unsigned int count_line);
+
 #endif
