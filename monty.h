@@ -31,5 +31,9 @@ typedef struct instruction_s
         void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
+void _pall(stack_t **list, unsigned int count);
+void _push(stack_t **list, unsigned int count);
+void call(char **opcode_tokens, stack_t **stack);
+void is_token(char **opcode_tokens, stack_t **stack);
 
 #endif
