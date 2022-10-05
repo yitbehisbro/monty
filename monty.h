@@ -74,5 +74,6 @@ void _rotr(stack_t **stack, unsigned int count_line);
 
 /*************stack_queue.c*********************/
 void _stack(stack_t **stack, unsigned int count_line);
+void _queue(stack_t **stack, unsigned int count_line);
 
 #endif
