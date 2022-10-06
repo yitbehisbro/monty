@@ -1,7 +1,5 @@
 #include "monty.h"
 
-unsigned int status;
-
 static instruction_t ops[] = {
 	{"push", _push}, {"pall", _pall}, {"pint", _pint}, {"pop", _pop},
 	{"swap", _swap}, {"add", _add}, {"nop", NULL}, {"sub", _sub}, {"div", _div},
@@ -37,10 +35,7 @@ void call(char **opcode_tokens, stack_t **stack)
 	if (strcmp(opcode_tokens[0], "push") == 0)
 	{
 		is_token(opcode_tokens, stack);
-		if (status == 1)
-			add_dnodeint(stack, atoi(opcode_tokens[1]));
-		else
-			add_dnodeint_end(stack, atoi(opcode_tokens[1]));
+		(*stack)->n = atoi(opcode_tokens[1]);
 	}
 	else if (!(ops[i].opcode))
 	{
