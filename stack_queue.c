@@ -1,6 +1,7 @@
 #include "monty.h"
 #include <stdlib.h>
 
+unsigned int status;
 /**
  * _stack - prints a list in LIFO
  * @list: pointer to a stack_t lists
@@ -12,7 +13,7 @@ void _stack(stack_t **list, unsigned int count)
 {
 	(void) list;
 	(void) count;
-	flags.status = 1;
+	status = 1;
 }
 
 /**
@@ -27,5 +28,5 @@ void _queue(stack_t **head, unsigned int count)
 {
 	(void) head;
 	(void) count;
-	flags.status = 0;
+	status = 0;
 }
