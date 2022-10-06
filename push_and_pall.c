@@ -64,7 +64,7 @@ void _push(stack_t **list, unsigned int count)
 
 			if (h == NULL)
 			{
-				*h = node;
+				*h = *node;
 			}
 			else
 			{
