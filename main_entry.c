@@ -5,6 +5,22 @@
 unsigned int count_line = 0;
 
 /**
+ * start_flags - initializes the global variables
+ *
+ * @fd: file descriptor
+ * Return: no return
+ */
+void start_flags(FILE *fd)
+{
+	flags.status = 1;
+	flags.cont = 1;
+	flags.arg = NULL;
+	flags.head = NULL;
+	flags.fd = fd;
+	flags.buffer = NULL;
+}
+
+/**
  * main - entry point for all the program
  * @argc: number of arguments passed
  * @argv: vector of the argument
@@ -26,6 +42,7 @@ int main(int argc, char *argv[])
 	}
 
 	fp = fopen(argv[1], "r+");
+	start_flags(fd);
 	if (fp == NULL)
 	{
 		fprintf(stderr, "Error: Can't open file %s\n", argv[1]);
