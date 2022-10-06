@@ -1,6 +1,8 @@
 #include "monty.h"
 #include <stdio.h>
 
+#define _GNU_SOURCE
+
 /**
  * _pall - prints a list of stacks
  * @list: pointer to a stack_t lists
