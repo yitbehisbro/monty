@@ -30,17 +30,3 @@ void _queue(stack_t **head, unsigned int count)
 	(void) count;
 	status = 0;
 }
-
-/**
- * _support - supports queue
- * @abc: integer
- * @head: pointer to stack
- *
- * Return: no return
- *
- */
-void _support(const int abc, stack_t **head)
-{
-	if (status == 0)
-		add_dnodeint_end(head, abc);
-}
