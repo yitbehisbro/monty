@@ -10,6 +10,7 @@
 #define _GNU_SOURCE
 
 extern unsigned int count_line;
+extern unsigned int status;
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
  * @n: integer
