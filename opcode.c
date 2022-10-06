@@ -37,6 +37,16 @@ void call(char **opcode_tokens, stack_t **stack)
 		is_token(opcode_tokens, stack);
 		(*stack)->n = atoi(opcode_tokens[1]);
 	}
+	else if (strcmp(opcode_tokens[0], "queue") == 0)
+	{
+		is_token(opcode_tokens, stack);
+		add_dnodeint_end(stack, atoi(opcode_tokens[1]));
+	}
+	else if (strcmp(opcode_tokens[0], "stack") == 0)
+	{
+		is_token(opcode_tokens, stack);
+		add_dnodeint(stack, atoi(opcode_tokens[1]));
+	}
 	else if (!(ops[i].opcode))
 	{
 		fprintf(stderr, "L%u: unknown instruction %s\n",
