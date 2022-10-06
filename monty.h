@@ -7,7 +7,7 @@
 #include <stdio.h>
 #include <string.h>
 
-#define _POSIX_C_SOURCE  200809L
+#define _POSIX_C_SOURCE 200112L
 #define _GNU_SOURCE
 
 extern unsigned int count_line;
