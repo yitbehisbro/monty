@@ -38,6 +38,29 @@ typedef struct instruction_s
         void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
+/**
+ * struct queue_and_stack - structure to use in the functions
+ * @lifo: is stack or queue
+ * @cont: current line
+ * @arg: second parameter inside the current line
+ * @head: doubly linked list
+ * @fd: file descriptor
+ * @buffer: input text
+ *
+ * Description: doubly linked list node structure
+ * for stack, queues, LIFO, FIFO
+ */
+typedef struct queue_and_stack
+{
+	unsigned int cont;
+	char  *arg;
+	stack_t *head;
+	FILE *fd;
+	char *buffer;
+} queue_and_stack_t;
+
+extern queue_and_stack_t flags;
+
 /***************push_and_pall.c************/
 void _pall(stack_t **list, unsigned int count);
 void _push(stack_t **list, unsigned int count);
