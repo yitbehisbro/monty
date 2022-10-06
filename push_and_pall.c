@@ -1,5 +1,6 @@
 #include "monty.h"
 
+unsigned int status;
 /**
  * _pall - prints a list of stacks
  * @list: pointer to a stack_t lists
@@ -33,6 +34,7 @@ void _pall(stack_t **list, unsigned int count)
 void _push(stack_t **list, unsigned int count)
 {
 	stack_t *node = NULL;
+	stack_t *h;
 	(void) count;
 
 	node = malloc(sizeof(stack_t));
@@ -49,8 +51,19 @@ void _push(stack_t **list, unsigned int count)
 		(*list) = node;
 	else
 	{
-		(*list)->prev = node;
-		node->next = *list;
-		*list = node;
+		if (status == 1)
+		{
+			(*list)->prev = node;
+			node->next = *list;
+			*list = node;
+		}
+		else
+		{
+			h = *head;
+			for (; h->next != NULL;)
+				h = h->next;
+			node->next = node;
+			node->prev = h;
+		}
 	}
 }
