@@ -3,6 +3,7 @@
 #include "monty.h"
 
 unsigned int count_line = 0;
+queue_and_stack_t flags;
 
 /**
  * start_flags - initializes the global variables
