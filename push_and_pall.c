@@ -1,7 +1,4 @@
 #include "monty.h"
-#include <stdio.h>
-
-#define _GNU_SOURCE
 
 /**
  * _pall - prints a list of stacks
@@ -39,8 +36,7 @@ void _push(stack_t **list, unsigned int count)
 
 	if (!flags.arg)
 	{
-		dprintf(2, "L%u: ", count);
-		dprintf(2, "usage: push integer\n");
+		fprintf(stderr, "L%u: usage: push integer\n", count);
 		free_stack(list);
 		exit(EXIT_FAILURE);
 	}
@@ -49,8 +45,7 @@ void _push(stack_t **list, unsigned int count)
 	{
 		if (!isdigit(flags.arg[j]) && flags.arg[j] != '-')
 		{
-			dprintf(2, "L%u: ", count);
-			dprintf(2, "usage: push integer\n");
+			fprintf(stderr, "L%u: usage: push integer\n", count);
 			free_stack(list);
 			exit(EXIT_FAILURE);
 		}
