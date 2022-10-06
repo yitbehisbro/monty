@@ -9,17 +9,7 @@
  */
 void _stack(stack_t **list, unsigned int count)
 {
-	stack_t *node, *head;
-	(void) count;
-
-	if (!list || !(*list))
-		return;
-	node = head = *list;
-
-	while (node)
-	{
-		node = node->next;
-	}
+	setenv("STACK_IT", "1", 2);
 }
 
 /**
@@ -32,32 +22,5 @@ void _stack(stack_t **list, unsigned int count)
  */
 void _queue(stack_t **head, unsigned int count)
 {
-	(void) count;
-
-	reverse(head);
-}
-
-/**
- * reverse - reverses the stacks
- * @head: pointer to struct
- * @count: number of line number
- *
- * Return: no return
- *
- */
-stack_t *reverse(stack_t **head)
-{
-	stack_t *temp = NULL;
-	stack_t *current = *head;
-
-	while (current !=  NULL)
-	{
-		temp = current->prev;
-		current->prev = current->next;
-		current->next = temp;
-		current = current->prev;
-	}
-	if (temp != NULL)
-		*head = temp->prev;
-	return (*head);
+	setenv("QUEUE_IT", "1", 2);
 }
