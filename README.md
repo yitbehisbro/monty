@@ -19,8 +19,6 @@
 
 <h3>Tests</h3>
 
-<p>We strongly encourage you to work all together on a set of tests</p>
-
 <h3>The Monty language</h3>
 
 <p>Monty 0.98 is a scripting language that is first compiled into Monty byte codes (Just like Python). It relies on a unique stack, with specific instructions to manipulate it. The goal of this project is to create an interpreter for Monty ByteCodes files.</p>
