@@ -7,6 +7,9 @@
 #include <stdio.h>
 #include <string.h>
 
+#define _POSIX_C_SOURCE  200809L
+#define _GNU_SOURCE
+
 extern unsigned int count_line;
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
