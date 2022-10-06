@@ -25,7 +25,6 @@ void call(char **opcode_tokens, stack_t **stack)
 			return;
 		if (strcmp(opcode_tokens[0], ops[i].opcode) == 0)
 		{
-			_support(atoi(opcode_tokens[1]), stack);
 			if (ops[i].f)
 				ops[i].f(stack, count_line);
 			break;
