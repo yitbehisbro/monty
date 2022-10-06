@@ -60,10 +60,9 @@ void _push(stack_t **list, unsigned int count)
 		else
 		{
 			h = *list;
-			for (; h->next != NULL;)
-				h = h->next;
-			node->next = node;
-			node->prev = h;
+			h->prev = *list;
+			(*list)->next = node;
+			*list = h;
 		}
 	}
 }
