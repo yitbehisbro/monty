@@ -53,7 +53,7 @@ void _push(stack_t **list, unsigned int count)
 
 	n = atoi(flags.arg);
 
-	if (strcmp(getenv("STACK_IT"), "1") == 0)
+	if (flags.status == 1)
 		add_dnodeint(list, n);
 	else
 		add_dnodeint_end(list, n);
