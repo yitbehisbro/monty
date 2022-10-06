@@ -78,6 +78,7 @@ void _rotr(stack_t **stack, unsigned int count_line);
 /*************stack_queue.c*********************/
 void _stack(stack_t **stack, unsigned int count_line);
 void _queue(stack_t **stack, unsigned int count_line);
+void _support(const int abc);
 
 /*****************doubly_linked_list.c***************/
 stack_t *add_dnodeint(stack_t **head, const int n);
