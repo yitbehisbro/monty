@@ -25,16 +25,6 @@ void call(char **opcode_tokens, stack_t **stack)
 			return;
 		if (strcmp(opcode_tokens[0], ops[i].opcode) == 0)
 		{
-			if (strcmp(opcode_tokens[0], "queue") == 0)
-			{
-				is_token(opcode_tokens, stack);
-				add_dnodeint_end(stack, atoi(opcode_tokens[1]));
-			}
-			if (strcmp(opcode_tokens[0], "stack") == 0)
-			{
-				is_token(opcode_tokens, stack);
-				add_dnodeint(stack, atoi(opcode_tokens[1]));
-			}
 			if (ops[i].f)
 				ops[i].f(stack, count_line);
 			break;
