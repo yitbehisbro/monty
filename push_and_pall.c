@@ -34,7 +34,6 @@ void _pall(stack_t **list, unsigned int count)
 void _push(stack_t **list, unsigned int count)
 {
 	stack_t *node = NULL;
-	stack_t *h;
 	(void) count;
 
 	node = malloc(sizeof(stack_t));
@@ -51,28 +50,8 @@ void _push(stack_t **list, unsigned int count)
 		(*list) = node;
 	else
 	{
-		if (status == 1)
-		{
-			(*list)->prev = node;
-			node->next = *list;
-			*list = node;
-		}
-		else
-		{
-			node->next = NULL;
-			h = *list;
-
-			if (h == NULL)
-			{
-				*h = *node;
-			}
-			else
-			{
-				for (; h->next != NULL;)
-					h = h->next;
-				h->next = node;
-			}
-			node->prev = h;
-		}
+		(*list)->prev = node;
+		node->next = *list;
+		*list = node;
 	}
 }
