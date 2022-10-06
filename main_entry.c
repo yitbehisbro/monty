@@ -3,23 +3,6 @@
 #include "monty.h"
 
 unsigned int count_line = 0;
-queue_and_stack_t flags;
-
-/**
- * start_flags - initializes the global variables
- *
- * @fd: file descriptor
- * Return: no return
- */
-void start_flags(FILE *fd)
-{
-	flags.status = 1;
-	flags.cont = 1;
-	flags.arg = NULL;
-	flags.head = NULL;
-	flags.fd = fd;
-	flags.buffer = NULL;
-}
 
 /**
  * main - entry point for all the program
@@ -43,7 +26,6 @@ int main(int argc, char *argv[])
 	}
 
 	fp = fopen(argv[1], "r+");
-	start_flags(fp);
 	if (fp == NULL)
 	{
 		fprintf(stderr, "Error: Can't open file %s\n", argv[1]);
