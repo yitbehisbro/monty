@@ -7,10 +7,10 @@
  *
  * Return: the address of the new element, or NULL if it failed
  */
-dlistint_t *add_dnodeint(dlistint_t **head, const int n)
+stack_t *add_dnodeint(stack_t **head, const int n)
 {
-	dlistint_t *h;
-	dlistint_t *new_node = malloc(sizeof(dlistint_t));
+	stack_t *h;
+	stack_t *new_node = malloc(sizeof(stack_t));
 
 	if (new_node == NULL)
 		return (NULL);
@@ -38,10 +38,10 @@ dlistint_t *add_dnodeint(dlistint_t **head, const int n)
  *
  * Return: the address of the new element, or NULL if it failed
  */
-dlistint_t *add_dnodeint_end(dlistint_t **head, const int n)
+stack_t *add_dnodeint_end(stack_t **head, const int n)
 {
-	dlistint_t *h;
-	dlistint_t *new_node = malloc(sizeof(dlistint_t));
+	stack_t *h;
+	stack_t *new_node = malloc(sizeof(stack_t));
 
 	if (new_node == NULL)
 		return (NULL);
