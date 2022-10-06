@@ -32,29 +32,25 @@ void _pall(stack_t **list, unsigned int count)
  */
 void _push(stack_t **list, unsigned int count)
 {
-	int n, j;
+	stack_t *node = NULL;
+	(void) count;
 
-	if (!flags.arg)
+	node = malloc(sizeof(stack_t));
+	if (!node)
 	{
-		fprintf(stderr, "L%u: usage: push integer\n", count);
+		fprintf(stderr, "Error: malloc failed\n");
 		free_stack(list);
 		exit(EXIT_FAILURE);
 	}
 
-	for (j = 0; flags.arg[j] != '\0'; j++)
-	{
-		if (!isdigit(flags.arg[j]) && flags.arg[j] != '-')
-		{
-			fprintf(stderr, "L%u: usage: push integer\n", count);
-			free_stack(list);
-			exit(EXIT_FAILURE);
-		}
-	}
+	node->prev = node->next = NULL;
 
-	n = atoi(flags.arg);
-
-	if (flags.status == 1)
-		add_dnodeint(list, n);
+	if (!(*list))
+		(*list) = node;
 	else
-		add_dnodeint_end(list, n);
+	{
+		(*list)->prev = node;
+		node->next = *list;
+		*list = node;
+	}
 }
