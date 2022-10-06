@@ -7,7 +7,6 @@
 #include <stdio.h>
 #include <string.h>
 
-#define _POSIX_C_SOURCE 200112L
 #define _GNU_SOURCE
 
 extern unsigned int count_line;
@@ -43,7 +42,7 @@ typedef struct instruction_s
 
 /**
  * struct queue_and_stack - structure to use in the functions
- * @lifo: is stack or queue
+ * @status: is stack or queue
  * @cont: current line
  * @arg: second parameter inside the current line
  * @head: doubly linked list
@@ -56,6 +55,7 @@ typedef struct instruction_s
 typedef struct queue_and_stack
 {
 	unsigned int cont;
+	int status;
 	char  *arg;
 	stack_t *head;
 	FILE *fd;
