@@ -1,65 +1,73 @@
 #include "monty.h"
 
 /**
- * add_dnodeint - adds a new node at the beginning of a dlistint_t list.
- * @head: pointer to the dlistint_t list.
- * @n: data to be added at the begning
- *
- * Return: the address of the new element, or NULL if it failed
- */
-stack_t *add_dnodeint(stack_t **head, const int n)
-{
-	stack_t *h;
-	stack_t *new_node = malloc(sizeof(stack_t));
-
-	if (new_node == NULL)
-		return (NULL);
-
-	new_node->n = n;
-	new_node->prev = NULL;
-	h = *head;
-
-	if (h != NULL)
-	{
-		for (; h->prev != NULL;)
-			h = h->prev;
-	}
-	new_node->next = h;
-	if (h != NULL)
-		h->prev = new_node;
-	*head = new_node;
-	return (new_node);
-}
-
-/**
- * add_dnodeint_end - adds a new node at the end of a dlistint_t list.
- * @head: pointer to the dlistint_t list.
- * @n: data to be added at the end
- *
- * Return: the address of the new element, or NULL if it failed
+ *add_dnodeint_end - add a note at the end of the doubly link list
+ *@head: first position of linked list
+ *@n: data to store
+ *Return: a doubly linked list
  */
 stack_t *add_dnodeint_end(stack_t **head, const int n)
 {
-	stack_t *h;
-	stack_t *new_node = malloc(sizeof(stack_t));
+	stack_t *temp, *aux;
 
-	if (new_node == NULL)
+	if (head == NULL)
 		return (NULL);
-
-	new_node->n = n;
-	new_node->next = NULL;
-	h = *head;
-
-	if (h == NULL)
+	temp = malloc(sizeof(stack_t));
+	if (!temp)
 	{
-		*head = new_node;
+		dprintf(2, "Error: malloc failed\n");
+		free_vglo();
+		exit(EXIT_FAILURE);
 	}
-	else
+	temp->n = n;
+	/*Careful with the first time*/
+	if (*head == NULL)
 	{
-		for (; h->next != NULL;)
-			h = h->next;
-		h->next = new_node;
+		temp->next = *head;
+		temp->prev = NULL;
+		*head = temp;
+		return (*head);
 	}
-	new_node->prev = h;
-	return (new_node);
+	aux = *head;
+	while (aux->next)
+		aux = aux->next;
+	temp->next = aux->next;
+	temp->prev = aux;
+	aux->next = temp;
+	return (aux->next);
+}
+
+/**
+ *add_dnodeint - add a note at the begining of the doubly link list
+ *@head: first position of linked list
+ *@n: data to store
+ *Return: a doubly linked list
+ */
+stack_t *add_dnodeint(stack_t **head, const int n)
+{
+	stack_t *temp;
+
+	if (head == NULL)
+		return (NULL);
+	temp = malloc(sizeof(stack_t));
+	if (!temp)
+	{
+		dprintf(2, "Error: malloc failed\n");
+		free_vglo();
+		exit(EXIT_FAILURE);
+	}
+	temp->n = n;
+	/*Careful with the first time*/
+	if (*head == NULL)
+	{
+		temp->next = *head;
+		temp->prev = NULL;
+		*head = temp;
+		return (*head);
+	}
+	(*head)->prev = temp;
+	temp->next = (*head);
+	temp->prev = NULL;
+	*head = temp;
+	return (*head);
 }
