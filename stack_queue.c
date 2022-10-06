@@ -12,7 +12,7 @@ void _stack(stack_t **list, unsigned int count)
 {
 	(void) list;
 	(void) count;
-	setenv("STACK_IT", "1", 2);
+	flags.status = 1;
 }
 
 /**
@@ -27,5 +27,5 @@ void _queue(stack_t **head, unsigned int count)
 {
 	(void) head;
 	(void) count;
-	setenv("QUEUE_IT", "1", 2);
+	flags.status = 0;
 }
