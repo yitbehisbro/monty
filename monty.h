@@ -100,7 +100,7 @@ void _stack(stack_t **stack, unsigned int count_line);
 void _queue(stack_t **stack, unsigned int count_line);
 
 /*****************doubly_linked_list.c***************/
-dlistint_t *add_dnodeint(dlistint_t **head, const int n);
-dlistint_t *add_dnodeint_end(dlistint_t **head, const int n);
+stack_t *add_dnodeint(stack_t **head, const int n);
+stack_t *add_dnodeint_end(stack_t **head, const int n);
 
 #endif
